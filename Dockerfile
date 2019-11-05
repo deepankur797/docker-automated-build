@@ -1,4 +1,17 @@
-FROM nginx:alpine
-EXPOSE 80 443
-COPY default.conf /etc/nginx/conf.d/
-COPY index.html /usr/share/nginx/html/
+FROM nginx:latest
+#getting latest nginx image
+
+WORKDIR /usr/share/nginx/html
+#Using workdir is preferred over RUN cd /usr/share/nginx/html
+
+COPY index.html index.html
+
+EXPOSE 80 8080FROM nginx:latest
+#getting latest nginx image
+
+WORKDIR /usr/share/nginx/html
+#Using workdir is preferred over RUN cd /usr/share/nginx/html
+
+COPY index.html index.html
+
+EXPOSE 80 8080
